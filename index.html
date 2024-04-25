@@ -32,19 +32,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h5 class="modal-title" id="fullScreenModalLabel">Iframe Chat bot</h5>
         </div>
         <div class="modal-body">
-          <form id="form-login" method="post" action="/">
+          <form id="form-login" method="get">
             <div class="form-group">
               <label for="inputName">Name</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+              <input type="text" class="form-control" id="inputName" name="name" placeholder="Enter your name">
             </div>
             <div class="form-group">
               <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+              <input type="text" class="form-control" id="inputEmail" name="no_telp" placeholder="Enter your NO Telp">
             </div>
+
             <div class="form-group">
-              <label for="inputMessage">Message</label>
-              <textarea class="form-control" id="inputMessage" rows="5" placeholder="Enter your message"></textarea>
-            </div>
+                <label for="gender">Gender:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                  <label class="form-check-label" for="male">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                  <label class="form-check-label" for="female">
+                    Female
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="city">City:</label>
+                <select class="form-control" id="city" name="city">
+                  <option value="">Select City</option>
+                  <option value="Jakarta">Jakarta</option>
+                  <option value="Surabaya">Surabaya</option>
+                  <option value="Bandung">Bandung</option>
+                  <option value="Yogyakarta">Yogyakarta</option>
+                  <!-- Tambahkan opsi kota lainnya sesuai kebutuhan -->
+                </select>
+              </div>
+              
+              
+           
           
         </div>
         <div class="modal-footer">

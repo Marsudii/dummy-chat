@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Data Handling</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <form id="form-login" method="post" action="#">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+    </div>
+    <button type="button" onclick="submitForm()">Login</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function submitForm() {
+      var form = document.getElementById("form-login");
+      var formData = new FormData(form);
+      var resultDiv = document.getElementById("result");
+
+      var dataToShow = "";
+      for (var pair of formData.entries()) {
+        dataToShow += pair[0] + ": " + pair[1] + "<br>";
+      }
+
+      resultDiv.innerHTML = "<h3>Data received:</h3>" + dataToShow;
+    }
+  </script>
+</body>
+</html>
