@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dummy Chat Example SDK</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://ga-honda.vercel.app/css/chatbot.css"/>
+  <title>Chat SDK</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://ik.imagekit.io/zlt25mb52fx/ahmcdn/images/favicon.png">
+  
 </head>
-<body>
-    
+
+<body >
+
+
+<!-- Chat bot UI start -->
+<div class="chat-screen">
+  <div class="chat-header">
+    <div class="chat-header-title">Chat Dengan Amanda</div>
+    <div class="chat-header-option hide">
+          <span class="dropdown custom-dropdown">
+            <div
+                    class="dropdown-menu dropdown-menu-right"
+                    aria-labelledby="dropdownMenuLink1"
+                    style="will-change: transform"
+            ></div>
+          </span>
+    </div>
+  </div>
+  <div class="chat-mail">
+    <div class="row">
+      <form id="id_form_submit_data_ga4">
+        <div class="col-md-12">
+          <div class="form-group">
+            <input
+
+
+                    type="tel"
+                    class="form-control"
+                    placeholder="Telephone Number"
+                    id="phone_number"
+                    name="phone_number"
+                    pattern="[0-9]{10,12}" maxlength="12" minlength="10" required
+
+
+            />
+
+
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <button class="btn btn-primary btn-rounded btn-block" type="submit">
+            Lanjut
+          </button>
+        </div>
+      </form>
+      <div class="col-md-12">
+        <div class="powered-by">Powered by nawatech</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chat-bot-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square animate">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ga-honda.vercel.app/js/gsap.js"></script>
+<script src="https://ga-honda.vercel.app/js/jquery.min.js" text="text/javascript"></script>
+<script>
+  $(document).ready(function () {
+    //Toggle fullscreen
+    $(".chat-bot-icon").click(function (e) {
+      $(this).children("img").toggleClass("hide");
+      $(this).children("svg").toggleClass("animate");
+      $(".chat-screen").toggleClass("show-chat");
+    });
+    $(".chat-mail button").click(function () {
+      $(".chat-mail").addClass("hide");
+      $(".chat-body").removeClass("hide");
+      $(".chat-input").removeClass("hide");
+      $(".chat-header-option").removeClass("hide");
+    });
+  });
+</script>
+
 </body>
 </html>
