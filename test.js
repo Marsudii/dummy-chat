@@ -1,32 +1,43 @@
 
-
 // Self-invoking anonymous function untuk menjalankan kode secara otomatis
 (function() {
     // Fungsi untuk melacak pengisian formulir di dalam iframe dan mengirimkan data ke dataLayer
-    function iframeFormSubmitDataLayer() {
+    function leoMeasureIframeFormSubmitDataLayer() {
         // Selector untuk mencari iframe di dalam halaman
-        var iframeId= 'iframe-chat-wanda'; // Ganti sesuai dengan selector iframe Anda, misalnya 'iframe#id-of-iframe'
+        var iframeSelector = 'iframe'; // Ganti sesuai dengan selector iframe Anda, misalnya 'iframe#id-of-iframe'
 
         // Memilih iframe dengan menggunakan selector yang telah ditentukan
-        var iframe = document.getElementById(iframeId);
+        var iframe = document.querySelector(iframeSelector);
         var isFormSubmitted = false; // Menyimpan status apakah formulir sudah disubmit
         var isInsideIframe = false; // Menyimpan status apakah mouse berada di dalam area iframe
         var isCodeExecuted = false; // Menyimpan status apakah kode telah dieksekusi
+        var iframeHeight; // Menyimpan ketinggian iframe
 
 
-         // Jika pengisian formulir disubmit, maka kirim data formulir ke dataLayer
-        if (isFormSubmitted) {
-    
-        // Mengirimkan data formulir ke dataLayer
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push({
-            event: 'iframe_form_submit',
-            form_location: window.location.href,
-            iframe_id: iframe.getAttribute('id'),
-            iframe_class: iframe.getAttribute('class')
+        // Observer untuk memantau perubahan di dalam iframe, terutama perubahan ketinggian
+        var observer = new MutationObserver(function (_mutationsList, observer) {
+            // Mendapatkan ketinggian saat ini dari iframe
+            var currentHeight = iframe.offsetHeight;
+            console.log("Iframe height now:"+currentHeight)
+            // Menghitung persentase perubahan ketinggian iframe
+            var iframeHeightChange = Math.abs(((currentHeight - iframeHeight) / iframeHeight) * 100);
+
+            console.log("Iframe height submit:"+iframeHeightChange)
+            // Jika perubahan ketinggian lebih dari 40% dan formulir belum disubmit, maka formulir telah disubmit
+            if (!isFormSubmitted && iframeHeightChange > 40) {
+                observer.disconnect(); // Menghentikan observer agar tidak terus memantau
+
+                isFormSubmitted = true;
+                // Mengirimkan data formulir ke dataLayer
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    event: 'iframe_form_submit',
+                    form_location: window.location.href,
+                    iframe_id: iframe.getAttribute('id'),
+                    iframe_class: iframe.getAttribute('class')
+                });
+            }
         });
-    }
-
 
         // Fungsi untuk menangani event mouseover di dalam iframe
         function handleMouseOver(event) {
@@ -110,6 +121,5 @@
     }
 
     // Memanggil fungsi untuk melacak pengisian formulir di dalam iframe
-    iframeFormSubmitDataLayer();
+    leoMeasureIframeFormSubmitDataLayer();
 })();
-

@@ -1,108 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Chat Interface</title>
-
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PG79MCK7');</script>
-    <!-- End Google Tag Manager -->
-
-
-
-
-    <style>
-        /* Style for the chat interface */
-        .chat-container {
-            max-width: 400px;
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .chat-header {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .chat-body {
-            padding: 10px;
-            min-height: 200px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .chat-message {
-            background-color: #e6e6e6;
-            border-radius: 5px;
-            padding: 5px 10px;
-            margin-bottom: 10px;
-        }
-
-        .chat-input {
-            width: calc(100% - 20px);
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin: 2px;
-        }
-
-        .chat-submit {
-            width: calc(100% - 20px);
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            margin: 10px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHATBOT</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
+  
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PG79MCK7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-    <div class="chat-container">
-        <div class="chat-header">Salam SatuHATI</div>
-
-        <form id="form-login">
-            <label style="margin: 2px;">Fullname</label>
-            <input type="text" class="chat-input" id="nama" placeholder="Fullname">
-            <br />
-            <br />
-            <label style="margin: 2px;">No Whatsapp</label>
-            <input type="text" class="chat-input" id="no_hp" placeholder="Nomor Whatsapp">
-            <br />
-            <br />
-            <label style="margin: 2px;">Kota</label>
-            <select class="chat-input" id="city" name="city">
-                <option label="-- Pilih Kota --"></option>
-                <option value="Jakarta">Jakarta</option>
-                <option value="Bogor">Bogor</option>
-                <option value="Depok">Depok</option>
-                <option value="Tangerang">Tangerang</option>
-                <option value="Bekasi">Bekasi</option>
-                <option value="Cianjur">Cianjur</option>
-            </select>
-            <hr />
-            <button class="chat-submit" type="submit">LANJUT</button>
-        </form>
+  <!-- Full Screen Modal -->
+  <div class="modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="fullScreenModalLabel">Iframe Chat bot</h5>
+        </div>
+        <div class="modal-body">
+          <form id="form-login">
+            <div class="form-group">
+              <label for="inputName">Name</label>
+              <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="inputMessage">Message</label>
+              <textarea class="form-control" id="inputMessage" rows="5" placeholder="Enter your message"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="LANJUT" class="btn btn-success">LANJUT</button>
+        </div>
+      </div>
     </div>
-</body>
+  
 
+  <!-- Bootstrap JS (jQuery, Popper.js, Bootstrap JS) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
