@@ -1,91 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Chat Interface</title>
-<style>
-    /* Style for the chat interface */
-    .chat-container {
-        max-width: 400px;
-        margin: 0 auto;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat Interface</title>
 
-    .chat-header {
-        background-color: #f0f0f0;
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
-    }
-
-    .chat-body {
-        padding: 10px;
-        min-height: 200px;
-        max-height: 400px;
-        overflow-y: auto;
-    }
-
-    .chat-message {
-        background-color: #e6e6e6;
-        border-radius: 5px;
-        padding: 5px 10px;
-        margin-bottom: 10px;
-    }
-
-    .chat-input {
-        width: calc(100% - 20px);
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px;
-    }
-
-    .chat-submit {
-        width: calc(100% - 20px);
-        padding: 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        margin: 10px;
-        cursor: pointer;
-    }
-</style>
-</head>
-<body>
-
-<div class="chat-container">
-    <div class="chat-header">Chat with Support</div>
-    <div class="chat-body" id="chat-body">
-        <!-- Messages will be appended here -->
-    </div>
-    <input type="text" class="chat-input" id="message-input" placeholder="Type your message...">
-    <button class="chat-submit" onclick="sendMessage()">Send</button>
-</div>
-
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWWJ9D7M84"></script>
 <script>
-function sendMessage() {
-    var messageInput = document.getElementById("message-input");
-    var message = messageInput.value.trim();
-    if (message !== "") {
-        appendMessage("You", message);
-        // You can add code here to send the message to a server or do other processing
-        messageInput.value = "";
-    }
-}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-function appendMessage(sender, message) {
-    var chatBody = document.getElementById("chat-body");
-    var messageDiv = document.createElement("div");
-    messageDiv.classList.add("chat-message");
-    messageDiv.innerHTML = "<strong>" + sender + ":</strong> " + message;
-    chatBody.appendChild(messageDiv);
-    // Scroll to bottom
-    chatBody.scrollTop = chatBody.scrollHeight;
-}
+  gtag('config', 'G-BWWJ9D7M84');
 </script>
 
+    <style>
+        /* Style for the chat interface */
+        .chat-container {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .chat-body {
+            padding: 10px;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            background-color: #e6e6e6;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 2px;
+        }
+
+        .chat-submit {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">Salam SatuHATI</div>
+
+        <form id="form-login">
+            <label style="margin: 2px;">Fullname</label>
+            <input type="text" class="chat-input" id="nama" placeholder="Fullname">
+            <br />
+            <br />
+            <label style="margin: 2px;">No Whatsapp</label>
+            <input type="text" class="chat-input" id="no_hp" placeholder="Nomor Whatsapp">
+            <br />
+            <br />
+            <label style="margin: 2px;">Kota</label>
+            <select class="chat-input" id="city" name="city">
+                <option label="-- Pilih Kota --"></option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Bogor">Bogor</option>
+                <option value="Depok">Depok</option>
+                <option value="Tangerang">Tangerang</option>
+                <option value="Bekasi">Bekasi</option>
+                <option value="Cianjur">Cianjur</option>
+            </select>
+            <hr />
+            <button class="chat-submit" type="submit">Send</button>
+        </form>
+
+    </div>
+
+
+    <script>
+        document.getElementById("chat-form").addEventListener("submit", function(event) {
+            // Ambil nilai input dari formulir
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            // Kirim data ke Google Analytics sebagai event
+            gtag('event', 'chat-form', {
+                'event_category': 'Chat Form',
+                'event_label': 'Chat Form Submitted',
+                'name': name,
+                'email': email
+            });
+
+            // Anda juga bisa menambahkan kode untuk mengirim data ke server Anda di sini
+
+            // Mencegah pengiriman formulir secara default
+            event.preventDefault();
+        });
+    </script>
+
+
+
+
 </body>
+
 </html>
