@@ -1,83 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHATBOT</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Google Tag Manager chatbot -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WWQMLNGP');</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHATBOT</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Tag Manager chatbot -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WWQMLNGP');
+    </script>
     <!-- End Google Tag Manager -->
 
 
 </head>
+
 <body>
-  
-<!-- Google Tag Manager chatbot (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWQMLNGP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Google Tag Manager chatbot (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWQMLNGP" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Full Screen Modal -->
-  <div class="modal-fullscreen">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="fullScreenModalLabel">Iframe Chat bot</h5>
-        </div>
-        <div class="modal-body">
-          <form id="form-login" method="get">
-            <div class="form-group">
-              <label for="inputName">Name</label>
-              <input type="text" class="form-control"  name="name" placeholder="Enter your name">
+    <!-- Full Screen Modal -->
+    <div class="modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="fullScreenModalLabel">Iframe Chat bot</h5>
             </div>
-            <div class="form-group">
-              <label for="inputEmail">NO Telp</label>
-              <input type="text" class="form-control" name="mobile_phone_number" placeholder="Enter your NO Telp">
+            <div class="modal-body">
+
+
+                <form id="form-login" method="get">
+                    <div class="form-group">
+                        <label for="inputName">Name</label>
+                        <input placeholder="Nama" class="form-control " name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">NO Telp</label>
+                        <input type="text" class="form-control" name="mobile_phone_number"
+                            placeholder="Enter your NO Telp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                            <label class="form-check-label" for="male">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input id="react-select-city_id-input" class="form-control" name="city">
+                    </div>
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="submit" id="form-login-submit" class="btn btn-success">LANJUT</button>
+                    </div>
+
+                </form>
             </div>
 
-            <div class="form-group">
-                <label for="gender">Gender:</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-                  <label class="form-check-label" for="male">
-                    Male
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                  <label class="form-check-label" for="female">
-                    Female
-                  </label>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label for="city">City:</label>
-                <input id="react-select-city_id-input" class="form-control" name="city">
-                </input>
-              </div>
-              
-              
-           
-          
-        </div>
-        <div class="modal-footer">
-          <button type="submit" id="form-login-submit" class="btn btn-success">LANJUT</button>
-        </div>
-      </div>
-    </form>
-    </div>
-  
-
-  <!-- Bootstrap JS (jQuery, Popper.js, Bootstrap JS) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <!-- Bootstrap JS (jQuery, Popper.js, Bootstrap JS) -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
