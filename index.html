@@ -8,76 +8,27 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-   
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MF43JTCC');</script>
-<!-- End Google Tag Manager -->
-
 
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF43JTCC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
+    	
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var s,t; s = document.createElement('script'); s.type = 'text/javascript';
+        s.src = 'https://s3-ap-southeast-1.amazonaws.com/qiscus-sdk/public/qismo/qismo-v4.js'; s.async = true;
+        s.onload = s.onreadystatechange = function() { new Qismo('okefk-i1msazeuglxyre4', {
+                        options: {
+                            channel_id: 129540,  
+                            extra_fields: [], 
+                        }
+                    }); }
+        t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+    });
+</script>
 
-    <!-- Full Screen Modal -->
-    <div class="modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="fullScreenModalLabel">Iframe Chat </h5>
-            </div>
-            <div class="modal-body">
-
-
-                <form id="form-login" method="get">
-                    <div class="form-group">
-                        <label for="inputName">Name</label>
-                        <input placeholder="Nama" class="form-control " name="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">NO Telp</label>
-                        <input placeholder="No. Whatsapp (812XXXX789)" class="form-control " aria-describedby="basic-addon1" name="mobile_phone_number">
-                    
-                    </div>
-
-                    <div class="form-group">
-                        <label for="gender">Gender:</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-                            <label class="form-check-label" for="male">
-                                Male
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                            <label class="form-check-label" for="female">
-                                Female
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="city">City:</label>
-                        <input id="react-select-city_id-input" class="form-control" name="city">
-                    </div>
-
-
-
-
-                    <div class="modal-footer">
-                        <button type="submit" id="form-login-submit" class="btn btn-success">LANJUT</button>
-                    </div>
-
-                </form>
-            </div>
+  
 
 
             <!-- Bootstrap JS (jQuery, Popper.js, Bootstrap JS) -->
